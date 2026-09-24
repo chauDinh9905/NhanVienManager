@@ -3,6 +3,8 @@
 *.VC.db
 *.VC.opendb
 *.suo
+*.aps
+*.vcxproj.user
 
 # Build
 Debug/

@@ -1,0 +1,111 @@
+﻿# ============================================================
+# File ngôn ngữ: English   (mã ngôn ngữ = tên file = "en")
+# - Lưu file dạng UTF-8.
+# - Cú pháp: KEY=Giá trị   |   dòng bắt đầu bằng # là chú thích
+# - \n trong giá trị = xuống dòng.
+# - Giữ NGUYÊN số lượng và thứ tự %s, %d giống mọi file ngôn ngữ khác.
+# - Danh sách key đầy đủ nằm ở Common/StringKeys.h
+# ============================================================
+
+# --- Thông tin file / định dạng chung ---
+META_LANG_NAME=English
+FMT_DATE_DISPLAY=yyyy-MM-dd
+FMT_LABEL=%s:
+MSG_ERROR_WITH_DETAIL=%s\n\nDetails: %s
+BTN_OK=OK
+BTN_CANCEL=Cancel
+LBL_LANGUAGE=Language:
+ERR_INVALID_IDENTIFIER=Invalid name! Use only letters without accents (a-z, A-Z), digits and underscore (_). It must not start with a digit and must be at most 64 characters.
+
+# --- Màn hình đăng nhập (CDlgLogin) ---
+TITLE_LOGIN=MySQL Login
+LBL_HOST=Host:
+LBL_PORT=Port:
+LBL_USER=User:
+LBL_PASSWORD=Password:
+BTN_CONNECT=Connect
+ERR_LOGIN_EMPTY=Please fill in Host, Port and User!
+ERR_PORT_INVALID=Port must be a whole number from 1 to 65535!
+ERR_CONNECT_FAIL=Failed to connect to MySQL! Please check your information.
+
+# --- Màn hình chọn Database / Bảng (CDlgConnectDB) ---
+TITLE_CONNECT_DB=Select Database and Table
+LBL_DBNAME=Database name:
+LBL_TABLENAME=Table name:
+BTN_CHECK=Check
+BTN_CREATE_TABLE=Create table...
+BTN_EDIT_TABLE=Edit table...
+BTN_OPEN=Open
+ERR_DB_TABLE_EMPTY=Please enter the Database name and the Table name!
+ERR_OPEN_DB_FAIL=Cannot create or open the database!
+MSG_TABLE_NOT_EXISTS=The table does not exist yet. Click "Create table..." to create it.
+MSG_TABLE_READY=The table is ready. Click "Open" to start working.
+MSG_TABLE_MISSING_COLUMNS=The table is missing required columns: %s\n\nClick "Edit table..." to add them.
+
+# --- Màn hình tạo / sửa cấu trúc bảng (CDlgTableSchema) ---
+TITLE_CREATE_TABLE=Create New Table
+TITLE_EDIT_TABLE=Edit Table Structure
+LBL_FIELDNAME=Field name:
+LBL_DATATYPE=Data type:
+CHK_NOTNULL=Required (NOT NULL)
+CHK_PK=Primary key
+BTN_ADD_FIELD=Add field
+BTN_EDIT_FIELD=Edit field
+BTN_DEL_FIELD=Delete field
+COL_FIELDNAME=Field name
+COL_DATATYPE=Data type
+COL_NOTNULL=NOT NULL
+COL_PRIMARYKEY=Primary key
+COL_STATUS=Status
+VAL_YES=Yes
+VAL_NO=No
+TAG_NEW=New
+TAG_MODIFIED=Modified
+TAG_REQUIRED=Required
+ERR_SELECT_FIELD=Please select a field in the list!
+ERR_FIELDNAME_EMPTY=Field name cannot be empty!
+ERR_FIELDNAME_DUP=This field name already exists in the list!
+ERR_SELECT_TYPE=Please select a data type!
+ERR_FIELD_LOCKED=This column is required by the program and cannot be edited or deleted.
+CONFIRM_DELETE_FIELD=Are you sure you want to delete the column "%s" from the table?
+MSG_CREATE_TABLE_SUCCESS=Table created successfully!
+MSG_CREATE_TABLE_FAIL=Failed to create the table!
+MSG_ALTER_NOTHING=There are no changes to apply.
+MSG_ALTER_SUCCESS=Table structure updated successfully!
+MSG_ALTER_FAIL=Failed to update the table structure! No changes were applied.
+ERR_LOAD_SCHEMA_FAIL=Cannot read the table structure!
+
+# --- Màn hình chính (CNhanVienManagerDlg) ---
+TITLE_MAIN=Employee Management
+BTN_ADD=Add
+BTN_EDIT=Edit
+BTN_DELETE=Delete
+COL_ID=ID
+COL_ACCOUNT=Account
+COL_HOTEN=Full name
+COL_QUEQUAN=Hometown
+COL_NGAYSINH=Date of birth
+COL_GIOITINH=Gender
+COL_TRUONGHOC=School
+GENDER_MALE=Male
+GENDER_FEMALE=Female
+ERR_SELECT_ONE=Please select EXACTLY ONE row to edit!
+ERR_SELECT_NONE_DELETE=No row is selected for deletion!
+CONFIRM_DELETE=Are you sure you want to delete %d selected record(s)?
+MSG_LOAD_FAIL=Cannot load the employee list!
+MSG_ADD_SUCCESS=Employee added successfully!
+MSG_ADD_FAIL=Failed to add the employee!
+MSG_EDIT_SUCCESS=Employee updated successfully!
+MSG_EDIT_FAIL=Failed to update the employee!
+MSG_DELETE_SUCCESS=Selected records deleted successfully!
+MSG_DELETE_FAIL=Failed to delete the records!
+
+# --- Màn hình thêm / sửa nhân viên (CDlgNhanVienInfo) ---
+DLG_TITLE_ADD=Add Employee
+DLG_TITLE_EDIT=Edit Employee
+LBL_ID_AUTO=(Automatic)
+ERR_EMPTY_FIELD=Please enter "%s"!
+ERR_TOO_LONG="%s" must not be longer than %d characters!
+ERR_INVALID_HOTEN=Full name must not contain digits!
+ERR_INVALID_ACCOUNT=Account may only contain letters without accents, digits and underscore (_)!
+ERR_INVALID_NGAYSINH=Invalid date of birth! It must be between the year %d and today.

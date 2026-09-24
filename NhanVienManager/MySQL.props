@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MySQL.props - cấu hình build DÙNG CHUNG cho mọi cấu hình (Debug/Release).
+  Máy khác cài MySQL ở thư mục khác -> CHỈ sửa dòng MySqlDir bên dưới.
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <MySqlDir Condition="'$(MySqlDir)' == ''">C:\Program Files\MySQL\MySQL Server 26.7</MySqlDir>
+  </PropertyGroup>
+
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <!-- $(ProjectDir): cho phép #include "Data/DBManager.h" từ BẤT KỲ thư mục con nào -->
+      <AdditionalIncludeDirectories>$(ProjectDir);$(MySqlDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <!-- /utf-8: đọc file .cpp/.h dạng UTF-8 (chú thích tiếng Việt không làm hỏng build) -->
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(MySqlDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Message>Copy libmysql.dll va thu muc lang canh file .exe</Message>
+      <Command>copy /y "$(MySqlDir)\lib\libmysql.dll" "$(OutDir)" &gt;nul
+if exist "$(MySqlDir)\bin\libcrypto*.dll" copy /y "$(MySqlDir)\bin\libcrypto*.dll" "$(OutDir)" &gt;nul
+if exist "$(MySqlDir)\bin\libssl*.dll" copy /y "$(MySqlDir)\bin\libssl*.dll" "$(OutDir)" &gt;nul
+if not exist "$(OutDir)lang" mkdir "$(OutDir)lang"
+if exist "$(ProjectDir)lang\*.lang" copy /y "$(ProjectDir)lang\*.lang" "$(OutDir)lang" &gt;nul</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

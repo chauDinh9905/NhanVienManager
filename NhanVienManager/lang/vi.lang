@@ -1,0 +1,111 @@
+﻿# ============================================================
+# File ngôn ngữ: Tiếng Việt   (mã ngôn ngữ = tên file = "vi")
+# - Lưu file dạng UTF-8.
+# - Cú pháp: KEY=Giá trị   |   dòng bắt đầu bằng # là chú thích
+# - \n trong giá trị = xuống dòng.
+# - Giữ NGUYÊN số lượng và thứ tự %s, %d giống mọi file ngôn ngữ khác.
+# - Danh sách key đầy đủ nằm ở Common/StringKeys.h
+# ============================================================
+
+# --- Thông tin file / định dạng chung ---
+META_LANG_NAME=Tiếng Việt
+FMT_DATE_DISPLAY=dd/MM/yyyy
+FMT_LABEL=%s:
+MSG_ERROR_WITH_DETAIL=%s\n\nChi tiết: %s
+BTN_OK=Đồng ý
+BTN_CANCEL=Hủy
+LBL_LANGUAGE=Ngôn ngữ:
+ERR_INVALID_IDENTIFIER=Tên không hợp lệ! Chỉ dùng chữ cái không dấu (a-z, A-Z), chữ số và dấu gạch dưới (_), không bắt đầu bằng chữ số, tối đa 64 ký tự.
+
+# --- Màn hình đăng nhập (CDlgLogin) ---
+TITLE_LOGIN=Đăng nhập MySQL
+LBL_HOST=Máy chủ:
+LBL_PORT=Cổng:
+LBL_USER=Tài khoản:
+LBL_PASSWORD=Mật khẩu:
+BTN_CONNECT=Kết nối
+ERR_LOGIN_EMPTY=Vui lòng nhập đầy đủ Máy chủ, Cổng và Tài khoản!
+ERR_PORT_INVALID=Cổng phải là số nguyên từ 1 đến 65535!
+ERR_CONNECT_FAIL=Kết nối MySQL thất bại! Vui lòng kiểm tra lại thông tin.
+
+# --- Màn hình chọn Database / Bảng (CDlgConnectDB) ---
+TITLE_CONNECT_DB=Chọn Database và Bảng
+LBL_DBNAME=Tên Database:
+LBL_TABLENAME=Tên bảng:
+BTN_CHECK=Kiểm tra
+BTN_CREATE_TABLE=Tạo bảng...
+BTN_EDIT_TABLE=Sửa bảng...
+BTN_OPEN=Mở
+ERR_DB_TABLE_EMPTY=Vui lòng nhập tên Database và tên Bảng!
+ERR_OPEN_DB_FAIL=Không thể tạo hoặc mở Database!
+MSG_TABLE_NOT_EXISTS=Bảng chưa tồn tại. Bấm "Tạo bảng..." để khởi tạo.
+MSG_TABLE_READY=Bảng đã sẵn sàng. Bấm "Mở" để bắt đầu làm việc.
+MSG_TABLE_MISSING_COLUMNS=Bảng đang thiếu các cột bắt buộc: %s\n\nBấm "Sửa bảng..." để bổ sung.
+
+# --- Màn hình tạo / sửa cấu trúc bảng (CDlgTableSchema) ---
+TITLE_CREATE_TABLE=Tạo bảng mới
+TITLE_EDIT_TABLE=Sửa cấu trúc bảng
+LBL_FIELDNAME=Tên trường:
+LBL_DATATYPE=Kiểu dữ liệu:
+CHK_NOTNULL=Bắt buộc (NOT NULL)
+CHK_PK=Khóa chính
+BTN_ADD_FIELD=Thêm trường
+BTN_EDIT_FIELD=Sửa trường
+BTN_DEL_FIELD=Xóa trường
+COL_FIELDNAME=Tên trường
+COL_DATATYPE=Kiểu dữ liệu
+COL_NOTNULL=NOT NULL
+COL_PRIMARYKEY=Khóa chính
+COL_STATUS=Trạng thái
+VAL_YES=Có
+VAL_NO=Không
+TAG_NEW=Mới
+TAG_MODIFIED=Đã sửa
+TAG_REQUIRED=Bắt buộc
+ERR_SELECT_FIELD=Vui lòng chọn một trường trong danh sách!
+ERR_FIELDNAME_EMPTY=Tên trường không được để trống!
+ERR_FIELDNAME_DUP=Tên trường đã tồn tại trong danh sách!
+ERR_SELECT_TYPE=Vui lòng chọn kiểu dữ liệu!
+ERR_FIELD_LOCKED=Đây là cột bắt buộc của chương trình, không thể sửa hoặc xóa.
+CONFIRM_DELETE_FIELD=Bạn có chắc chắn muốn xóa cột "%s" khỏi bảng?
+MSG_CREATE_TABLE_SUCCESS=Tạo bảng thành công!
+MSG_CREATE_TABLE_FAIL=Tạo bảng thất bại!
+MSG_ALTER_NOTHING=Không có thay đổi nào để áp dụng.
+MSG_ALTER_SUCCESS=Cập nhật cấu trúc bảng thành công!
+MSG_ALTER_FAIL=Cập nhật cấu trúc bảng thất bại! Chưa có thay đổi nào được áp dụng.
+ERR_LOAD_SCHEMA_FAIL=Không đọc được cấu trúc bảng!
+
+# --- Màn hình chính (CNhanVienManagerDlg) ---
+TITLE_MAIN=Quản lý nhân viên
+BTN_ADD=Thêm
+BTN_EDIT=Sửa
+BTN_DELETE=Xóa
+COL_ID=ID
+COL_ACCOUNT=Tài khoản
+COL_HOTEN=Họ và tên
+COL_QUEQUAN=Quê quán
+COL_NGAYSINH=Ngày sinh
+COL_GIOITINH=Giới tính
+COL_TRUONGHOC=Trường học
+GENDER_MALE=Nam
+GENDER_FEMALE=Nữ
+ERR_SELECT_ONE=Vui lòng chọn ĐÚNG 1 dòng để sửa!
+ERR_SELECT_NONE_DELETE=Chưa chọn dòng nào để xóa!
+CONFIRM_DELETE=Bạn có chắc chắn muốn xóa %d bản ghi đã chọn?
+MSG_LOAD_FAIL=Không tải được danh sách nhân viên!
+MSG_ADD_SUCCESS=Thêm nhân viên thành công!
+MSG_ADD_FAIL=Thêm nhân viên thất bại!
+MSG_EDIT_SUCCESS=Cập nhật nhân viên thành công!
+MSG_EDIT_FAIL=Cập nhật nhân viên thất bại!
+MSG_DELETE_SUCCESS=Xóa thành công các bản ghi đã chọn!
+MSG_DELETE_FAIL=Xóa bản ghi thất bại!
+
+# --- Màn hình thêm / sửa nhân viên (CDlgNhanVienInfo) ---
+DLG_TITLE_ADD=Thêm nhân viên
+DLG_TITLE_EDIT=Sửa thông tin nhân viên
+LBL_ID_AUTO=(Tự động)
+ERR_EMPTY_FIELD=Vui lòng nhập "%s"!
+ERR_TOO_LONG="%s" không được dài quá %d ký tự!
+ERR_INVALID_HOTEN=Họ và tên không được chứa chữ số!
+ERR_INVALID_ACCOUNT=Tài khoản chỉ được chứa chữ cái không dấu, chữ số và dấu gạch dưới (_)!
+ERR_INVALID_NGAYSINH=Ngày sinh không hợp lệ! Phải từ năm %d đến hôm nay.

@@ -1,93 +1,165 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Common">
+      <UniqueIdentifier>{A1B2C3D4-0001-4000-8000-000000000001}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Localization">
+      <UniqueIdentifier>{A1B2C3D4-0002-4000-8000-000000000002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{A1B2C3D4-0003-4000-8000-000000000003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{A1B2C3D4-0004-4000-8000-000000000004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{A1B2C3D4-0005-4000-8000-000000000005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App">
+      <UniqueIdentifier>{A1B2C3D4-0006-4000-8000-000000000006}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{A1B2C3D4-0007-4000-8000-000000000007}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NhanVienManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NhanVienManagerDlg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
+      <Filter>App</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="NhanVienManager.h">
+      <Filter>App</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
+      <Filter>App</Filter>
     </ClInclude>
-    <ClInclude Include="DBManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="CDlgLogin.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="targetver.h">
+      <Filter>App</Filter>
     </ClInclude>
-    <ClInclude Include="CDlgConnectDB.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Common\AppConstants.h">
+      <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="FieldInfo.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Common\AppSettings.h">
+      <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="CDlgCreateTable.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Common\DateUtil.h">
+      <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="CDlgEditTable.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Common\StringKeys.h">
+      <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="CDlgNhanVienInfo.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Common\StringUtil.h">
+      <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="LanguageManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Localization\LanguageManager.h">
+      <Filter>Localization</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\DataTypes.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\FieldInfo.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\NhanVienInfo.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\NhanVienSchema.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Models\NhanVienValidator.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\DBManager.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\NhanVienRepository.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\SchemaRepository.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\SqlUtil.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\BaseDialog.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\CDlgConnectDB.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\CDlgLogin.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\CDlgNhanVienInfo.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\CDlgTableSchema.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\NhanVienManagerDlg.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UiHelpers.h">
+      <Filter>UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NhanVienManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NhanVienManagerDlg.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>App</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>App</Filter>
     </ClCompile>
-    <ClCompile Include="DBManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Common\AppSettings.cpp">
+      <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="CDlgLogin.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Localization\LanguageManager.cpp">
+      <Filter>Localization</Filter>
     </ClCompile>
-    <ClCompile Include="CDlgConnectDB.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Models\NhanVienSchema.cpp">
+      <Filter>Models</Filter>
     </ClCompile>
-    <ClCompile Include="CDlgCreateTable.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Models\NhanVienValidator.cpp">
+      <Filter>Models</Filter>
     </ClCompile>
-    <ClCompile Include="CDlgEditTable.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Data\DBManager.cpp">
+      <Filter>Data</Filter>
     </ClCompile>
-    <ClCompile Include="CDlgNhanVienInfo.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Data\NhanVienRepository.cpp">
+      <Filter>Data</Filter>
     </ClCompile>
-    <ClCompile Include="LanguageManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Data\SchemaRepository.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\SqlUtil.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\BaseDialog.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\CDlgConnectDB.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\CDlgLogin.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\CDlgNhanVienInfo.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\CDlgTableSchema.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\NhanVienManagerDlg.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UiHelpers.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +168,15 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="MySQL.props">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="lang\en.lang">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="lang\vi.lang">
+      <Filter>Config</Filter>
+    </None>
     <None Include="res\NhanVienManager.rc2">
       <Filter>Resource Files</Filter>
     </None>

@@ -31,7 +31,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -39,14 +39,14 @@
     <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -54,7 +54,7 @@
     <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -74,6 +74,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <Import Project="MySQL.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
@@ -96,9 +97,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\lib;</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -123,11 +128,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\lib;</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -150,12 +159,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Program Files\MySQL\MySQL Server 26.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>C:\Program Files\MySQL\MySQL Server 26.7\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libmysql.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -180,11 +187,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\lib;</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -197,43 +208,63 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="CDlgConnectDB.h" />
-    <ClInclude Include="CDlgCreateTable.h" />
-    <ClInclude Include="CDlgEditTable.h" />
-    <ClInclude Include="CDlgLogin.h" />
-    <ClInclude Include="CDlgNhanVienInfo.h" />
-    <ClInclude Include="DBManager.h" />
-    <ClInclude Include="FieldInfo.h" />
+    <ItemGroup>
     <ClInclude Include="framework.h" />
-    <ClInclude Include="LanguageManager.h" />
     <ClInclude Include="NhanVienManager.h" />
-    <ClInclude Include="NhanVienManagerDlg.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Common\AppConstants.h" />
+    <ClInclude Include="Common\AppSettings.h" />
+    <ClInclude Include="Common\DateUtil.h" />
+    <ClInclude Include="Common\StringKeys.h" />
+    <ClInclude Include="Common\StringUtil.h" />
+    <ClInclude Include="Localization\LanguageManager.h" />
+    <ClInclude Include="Models\DataTypes.h" />
+    <ClInclude Include="Models\FieldInfo.h" />
+    <ClInclude Include="Models\NhanVienInfo.h" />
+    <ClInclude Include="Models\NhanVienSchema.h" />
+    <ClInclude Include="Models\NhanVienValidator.h" />
+    <ClInclude Include="Data\DBManager.h" />
+    <ClInclude Include="Data\NhanVienRepository.h" />
+    <ClInclude Include="Data\SchemaRepository.h" />
+    <ClInclude Include="Data\SqlUtil.h" />
+    <ClInclude Include="UI\BaseDialog.h" />
+    <ClInclude Include="UI\CDlgConnectDB.h" />
+    <ClInclude Include="UI\CDlgLogin.h" />
+    <ClInclude Include="UI\CDlgNhanVienInfo.h" />
+    <ClInclude Include="UI\CDlgTableSchema.h" />
+    <ClInclude Include="UI\NhanVienManagerDlg.h" />
+    <ClInclude Include="UI\UiHelpers.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CDlgConnectDB.cpp" />
-    <ClCompile Include="CDlgCreateTable.cpp" />
-    <ClCompile Include="CDlgEditTable.cpp" />
-    <ClCompile Include="CDlgLogin.cpp" />
-    <ClCompile Include="CDlgNhanVienInfo.cpp" />
-    <ClCompile Include="DBManager.cpp" />
-    <ClCompile Include="LanguageManager.cpp" />
     <ClCompile Include="NhanVienManager.cpp" />
-    <ClCompile Include="NhanVienManagerDlg.cpp" />
     <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Common\AppSettings.cpp" />
+    <ClCompile Include="Localization\LanguageManager.cpp" />
+    <ClCompile Include="Models\NhanVienSchema.cpp" />
+    <ClCompile Include="Models\NhanVienValidator.cpp" />
+    <ClCompile Include="Data\DBManager.cpp" />
+    <ClCompile Include="Data\NhanVienRepository.cpp" />
+    <ClCompile Include="Data\SchemaRepository.cpp" />
+    <ClCompile Include="Data\SqlUtil.cpp" />
+    <ClCompile Include="UI\BaseDialog.cpp" />
+    <ClCompile Include="UI\CDlgConnectDB.cpp" />
+    <ClCompile Include="UI\CDlgLogin.cpp" />
+    <ClCompile Include="UI\CDlgNhanVienInfo.cpp" />
+    <ClCompile Include="UI\CDlgTableSchema.cpp" />
+    <ClCompile Include="UI\NhanVienManagerDlg.cpp" />
+    <ClCompile Include="UI\UiHelpers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="NhanVienManager.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MySQL.props" />
+    <None Include="lang\en.lang" />
+    <None Include="lang\vi.lang" />
     <None Include="res\NhanVienManager.rc2" />
   </ItemGroup>
   <ItemGroup>

@@ -98,12 +98,12 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <AdditionalDependencies>libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -129,14 +129,14 @@
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -160,9 +160,11 @@
       <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -188,14 +190,14 @@
       <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Program Files\MySQL\MySQL Server 9.7\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>libmysql.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib;D:\Program Files %28x86%29\MySQL\MySQL Connector C 6.1\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Program Files\MySQL\MySQL Server 9.7\lib</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -208,7 +210,7 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
   </ItemDefinitionGroup>
-    <ItemGroup>
+  <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="NhanVienManager.h" />
     <ClInclude Include="pch.h" />

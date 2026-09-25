@@ -39,7 +39,9 @@ bool CLanguageManager::Initialize()
         if (!LoadFile(finder.GetFilePath(), dict)) continue;
 
         LanguageInfo info;
-        info.strCode = finder.GetFileTitle();          // "vi.lang" -> "vi"
+        const CString strFileName = finder.GetFileName();
+        const int nDot = strFileName.ReverseFind(_T('.'));
+        info.strCode = (nDot > 0) ? strFileName.Left(nDot) : strFileName;      // "vi.lang" -> "vi"
         info.strPath = finder.GetFilePath();
         auto it = dict.find(K::META_LANG_NAME);
         info.strName = (it != dict.end()) ? it->second : info.strCode;

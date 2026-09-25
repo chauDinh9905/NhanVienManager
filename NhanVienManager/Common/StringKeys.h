@@ -9,6 +9,7 @@
 // Bản Debug sẽ tự báo nếu file .lang nào thiếu key hoặc sai %s/%d.
 #pragma once
 #include "pch.h"
+#include "UI/CDlgLogin.h"
 #define APP_STRING_KEYS(X) \
     X(META_LANG_NAME) \
     X(FMT_DATE_DISPLAY) \

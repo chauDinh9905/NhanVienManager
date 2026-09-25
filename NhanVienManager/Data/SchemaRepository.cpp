@@ -5,7 +5,7 @@
 #include "Data/SqlUtil.h"
 #include "Models/DataTypes.h"
 #include "Common/StringUtil.h"
-
+using namespace std;
 bool CSchemaRepository::Run(const CString& strSql)
 {
     CDBManager& db = CDBManager::GetInstance();
@@ -140,7 +140,7 @@ bool CSchemaRepository::CreateTable(const CString& strTableName, const std::vect
     }
     if (!ValidateFields(fields)) return false;
 
-    std::vector<CString> definitions;
+    vector<CString> definitions;
     for (const auto& f : fields)
     {
         if (f.op != FieldOp::Delete) definitions.push_back(BuildColumnDefinition(f));
@@ -190,7 +190,7 @@ bool CSchemaRepository::ApplyChanges(const CString& strTableName, const std::vec
         }
     }
 
-    std::vector<CString> clauses;
+    vector<CString> clauses;
     clauses.insert(clauses.end(), drops.begin(), drops.end());
     clauses.insert(clauses.end(), changes.begin(), changes.end());
     clauses.insert(clauses.end(), adds.begin(), adds.end());
